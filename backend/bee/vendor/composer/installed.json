@@ -1,0 +1,316 @@
+[
+    {
+        "name": "emarref/jwt",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/emarref/jwt.git",
+            "reference": "79f563750ff90dabd4fa677c4b4e5ec9ed52d9b4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/emarref/jwt/zipball/79f563750ff90dabd4fa677c4b4e5ec9ed52d9b4",
+            "reference": "79f563750ff90dabd4fa677c4b4e5ec9ed52d9b4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "suggest": {
+            "ext-openssl": "Enables more token encryption options"
+        },
+        "time": "2016-09-05T20:33:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Emarref\\Jwt\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Malcolm Fell",
+                "email": "emarref@gmail.com"
+            }
+        ],
+        "description": "A JWT implementation"
+    },
+    {
+        "name": "giggsey/libphonenumber-for-php",
+        "version": "8.9.14",
+        "version_normalized": "8.9.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/giggsey/libphonenumber-for-php.git",
+            "reference": "338f988183bee1e85ec7b4ef425a3e64a7604473"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/338f988183bee1e85ec7b4ef425a3e64a7604473",
+            "reference": "338f988183bee1e85ec7b4ef425a3e64a7604473",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "giggsey/locale": "^1.2",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "pear/pear-core-minimal": "^1.9",
+            "pear/pear_exception": "^1.0",
+            "pear/versioncontrol_git": "^0.5",
+            "phing/phing": "^2.7",
+            "php-coveralls/php-coveralls": "^1.0|^2.0",
+            "phpunit/phpunit": "^4.8.36|^5.0",
+            "symfony/console": "^2.8|^3.0"
+        },
+        "time": "2018-09-19T15:54:29+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "8.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "libphonenumber\\": "src/"
+            },
+            "exclude-from-classmap": [
+                "/src/data/",
+                "/src/carrier/data/",
+                "/src/geocoding/data/",
+                "/src/timezone/data/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Joshua Gigg",
+                "email": "giggsey@gmail.com",
+                "homepage": "https://giggsey.com/"
+            }
+        ],
+        "description": "PHP Port of Google's libphonenumber",
+        "homepage": "https://github.com/giggsey/libphonenumber-for-php",
+        "keywords": [
+            "geocoding",
+            "geolocation",
+            "libphonenumber",
+            "mobile",
+            "phonenumber",
+            "validation"
+        ]
+    },
+    {
+        "name": "giggsey/locale",
+        "version": "1.5",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/giggsey/Locale.git",
+            "reference": "3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/giggsey/Locale/zipball/3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff",
+            "reference": "3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "pear/pear-core-minimal": "^1.9",
+            "pear/pear_exception": "^1.0",
+            "pear/versioncontrol_git": "^0.5",
+            "phing/phing": "~2.7",
+            "phpunit/phpunit": "^4.8|^5.0",
+            "satooshi/php-coveralls": "^1.0",
+            "symfony/console": "^2.8|^3.0|^4.0",
+            "symfony/filesystem": "^2.8|^3.0|^4.0",
+            "symfony/finder": "^2.8|^3.0|^4.0",
+            "symfony/process": "^2.8|^3.0|^4.0"
+        },
+        "time": "2018-04-03T15:53:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Giggsey\\Locale\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Joshua Gigg",
+                "email": "giggsey@gmail.com",
+                "homepage": "http://giggsey.com/"
+            }
+        ],
+        "description": "Locale functions required by libphonenumber-for-php"
+    },
+    {
+        "name": "godpod/sendgrid",
+        "version": "2.2.0.1",
+        "version_normalized": "2.2.0.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/godpod/sendgrid-php.git",
+            "reference": "be221d7501ad1b0faae210229f2f070c853afc45"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/godpod/sendgrid-php/zipball/be221d7501ad1b0faae210229f2f070c853afc45",
+            "reference": "be221d7501ad1b0faae210229f2f070c853afc45",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3",
+            "sendgrid/smtpapi": "0.*"
+        },
+        "replace": {
+            "godpod/sendgrid-php": "*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*",
+            "vlucas/phpdotenv": "1.0.2"
+        },
+        "time": "2015-01-19T11:12:24+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "SendGrid": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "This library allows you to quickly and easily send emails or make api calls through SendGrid using PHP.",
+        "homepage": "http://github.com/godpod/sendgrid-php",
+        "keywords": [
+            "email",
+            "grid",
+            "send",
+            "sendgrid"
+        ]
+    },
+    {
+        "name": "sendgrid/smtpapi",
+        "version": "0.6.1",
+        "version_normalized": "0.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sendgrid/smtpapi-php.git",
+            "reference": "1c835388c11dc5e792260ae3e9662d6a661ace30"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sendgrid/smtpapi-php/zipball/1c835388c11dc5e792260ae3e9662d6a661ace30",
+            "reference": "1c835388c11dc5e792260ae3e9662d6a661ace30",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "replace": {
+            "sendgrid/smtpapi-php": "*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "suggest": {
+            "swiftmailer/swiftmailer": "^5.4 - Needed to run the example scripts"
+        },
+        "time": "2017-07-06T22:11:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Smtpapi": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Build SendGrid X-SMTPAPI headers in PHP.",
+        "homepage": "http://github.com/sendgrid/smtpapi-php",
+        "keywords": [
+            "X-SMTP",
+            "api",
+            "email",
+            "grid",
+            "send",
+            "sendgrid",
+            "smtp",
+            "smtpapi",
+            "xsmtp"
+        ]
+    },
+    {
+        "name": "shuchkin/simplexlsx",
+        "version": "0.8.5",
+        "version_normalized": "0.8.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/shuchkin/simplexlsx.git",
+            "reference": "3c90165c45407bef63f5414b5c4aeb8c0132685a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/shuchkin/simplexlsx/zipball/3c90165c45407bef63f5414b5c4aeb8c0132685a",
+            "reference": "3c90165c45407bef63f5414b5c4aeb8c0132685a",
+            "shasum": ""
+        },
+        "require": {
+            "ext-libxml": "*",
+            "ext-simplexml": "*",
+            "ext-zlib": "*"
+        },
+        "time": "2019-03-06T21:21:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/SimpleXLSX.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sergey Shuchkin (SMSPILOT)",
+                "email": "sergey.shuchkin@gmail.com",
+                "homepage": "http://www.shuchkin.ru/"
+            }
+        ],
+        "description": "Parse and retrieve data from Excel XLSx files. MS Excel 2007 workbooks PHP reader.",
+        "homepage": "https://github.com/shuchkin/simplexlsx",
+        "keywords": [
+            "backend",
+            "excel",
+            "parser",
+            "php",
+            "xlsx"
+        ]
+    }
+]

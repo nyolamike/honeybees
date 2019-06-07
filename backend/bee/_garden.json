@@ -1,0 +1,181 @@
+{
+    "hive": {
+        "name": [
+            "vcnn",
+            60
+        ],
+        "hive_name": [
+            "vcnn",
+            60
+        ],
+        "email": [
+            "vcnn",
+            60
+        ],
+        "phone_number": [
+            "vcnn",
+            60
+        ],
+        "country": [
+            "vcnn",
+            30
+        ],
+        "code": [
+            "vcnn",
+            30
+        ],
+        "status": [
+            "vcnn",
+            30,
+            "new"
+        ],
+        "password": [
+            "vcnn",
+            255
+        ],
+        "_hidden":["code","password"]
+    },
+    "hive_user": {
+        "user_id": [
+            "inn",
+            30
+        ],
+        "hive_id": [
+            "inn",
+            30
+        ],
+        "hive_name": [
+            "vcnn",
+            60
+        ],
+        "email": [
+            "vcnn",
+            60
+        ],
+        "password": [
+            "vcnn",
+            255
+        ],
+        "_hidden":["password"]
+    },
+    "comb": {
+        "hive_id": [
+            "fk"
+        ],
+        "name": [
+            "vcnn",
+            100
+        ],
+        "description": [
+            "vcnn",
+            100
+        ]
+    },
+    "section": {
+        "comb_id": [
+            "fk"
+        ],
+        "name": [
+            "vcnn",
+            100
+        ],
+        "db_kind": [
+            "vcnn",
+            100
+        ],
+        "type": [
+            "vcnn",
+            30
+        ]
+    },
+    "section_fragile": {
+        "section_id": [
+            "fk"
+        ],
+        "section_name": [
+            "vcnn",
+            100
+        ],
+        "used_by_section_id": [
+            "vcnn",
+            30
+        ]
+    },
+    "log": {
+        "route": [
+            "vcn",
+            100
+        ],
+        "type": [
+            "vcn",
+            30
+        ],
+        "CRUD_opertion": [
+            "vcn",
+            30
+        ],
+        "table": [
+            "vcn",
+            30
+        ],
+        "affected_record_guid": [
+            "tnn"
+        ],
+        "description": [
+            "vcnn",
+            100
+        ],
+        "json_data": [
+            "tnn"
+        ],
+        "service_name": [
+            "vcn",
+            30
+        ],
+        "role": [
+            "vcn",
+            100
+        ],
+        "permissions": [
+            "vcn",
+            100
+        ]
+    },
+    "module": {
+        "hive_id": [
+            "fk"
+        ],
+        "time_to_expire": ["inn","30"],
+        "code": [
+            "vcnn",
+            30
+        ],
+        "hive_name": [
+            "vcnn",
+            30
+        ],
+        "cost": [
+            "dnn"
+        ],
+        "paid": [
+            "dnn"
+        ],
+        "status": [
+            "vcnn_d",
+            30,
+            "active"
+        ]
+    },
+    "_for": "_garden.json",
+    "_modules":[
+        {"sub_of":"","name":"dashboard","code":"dashboard","cost":300,"description":""},
+        {"sub_of":"","name":"front desk","code":"frontdesk","cost":300,"description":""},
+        {"sub_of":"","name":"bookings","code":"bookings","cost":300,"description":""},
+        {"sub_of":"","name":"guests","code":"guests","cost":300,"description":""},
+        {"sub_of":"","name":"rooms","code":"rooms","cost":300,"description":""},
+        {"sub_of":"","name":"inventory","code":"inventory","cost":300,"description":""},
+        {"sub_of":"","name":"reports","code":"report","cost":300,"description":""},
+        {"sub_of":"","name":"security","code":"security","cost":300,"description":""},
+        {"sub_of":"","name":"configurations","code":"config","cost":300,"description":""}
+    ]
+}

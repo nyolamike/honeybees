@@ -1,0 +1,1164 @@
+comments on columns during database creation
+having more than one fk in a table and being able to do the parents and children relationships during honey creation
+working with a table that has a fk that refrences its self
+in the less strict mode which is the default one, the _hive,json file changes as tables are created depending on how the request is structured
+migrations
+
+if($is_restricted==true && BEE_ENFORCE_RELATIONSHIPS == false){
+for inserting and updating records
+
+--updating
+--invisible fields/ hidden fields
+--attributes list
+--seeding
+validations
+multitenancy
+--roles based security (menu items,action items)
+logging/audit trails
+--group
+--order by/ sorting
+--hashing
+--encryption
+--COUNT
+pagination  and what would have been the returned value count
+realtime sockets 
+email
+sms
+batch processing e.g upload excell file
+export database
+image resizing
+working with existing systems
+array syntax : boys:[{}] on the ui client
+clone jobs
+triggers
+server rendering
+paypal integration
+true africa mobile money integration
+conditions
+offline access and synchronisation
+--.xtruction
+--sudo delete
+--having
+queues
+limits  and what would have been the returned value count
+--fx calculations
+--tonyy's problem
+
+
+SELECT product.id, product.name, 
+(SELECT SUM(stockin_item.quantity) FROM stockin_item WHERE stockin_item.product_id = product.id) as q1,
+(SELECT SUM(stockout_item.quantity) FROM stockout_item WHERE stockout_item.product_id = product.id) as q2
+FROM `product`
+
+SELECT product.id, product.name, 
+(
+(SELECT SUM(stockin_item.quantity) FROM stockin_item WHERE stockin_item.product_id = product.id) -
+(SELECT SUM(stockout_item.quantity) FROM stockout_item WHERE stockout_item.product_id = product.id)
+) as q3
+FROM `product`
+where id = 6
+
+SELECT product.id as products__id, product.name as products__name,  
+(SELECT SUM(stockin_item.quantity) FROM stockin_item WHERE 
+    (stockin_item.is_deleted = 0) AND ( (  stockin_item.id > 1) AND ( stockin_item.product_id = product.id )))-
+(SELECT SUM(stockout_item.quantity) FROM stockout_item WHERE  
+    (stockout_item.is_deleted = 0) AND ( stockout_item.product_id = product.id )) as products__quantity, product.is_deleted as 
+    products__is_deleted FROM product  
+
+
+
+SELECT product.id as products__id, product.name as products__name,  
+(SELECT SUM(stockin_item.quantity) FROM stockin_item WHERE  (stockin_item.is_deleted = 0) AND ( (  stockin_item.id > 1) AND ( stockin_item.product_id = product.id )) )-
+(SELECT SUM(stockout_item.quantity) FROM stockout_item WHERE  (stockout_item.is_deleted = 0) AND ( stockout_item.product_id = product.id )) 
+as products__quantity, 
+product.is_deleted as products__is_deleted FROM product
+
+
+IFNULL(
+    (SELECT SUM(stockin_item.quantity)  FROM stockin_item WHERE  (stockin_item.is_deleted = 0) AND ( (  stockin_item.id > 1) AND ( stockin_item.product_id = 8 )) GROUP  BY stockin_item.product_id)
+,0) as products__quantity, 
+
+
+SELECT 
+product.id as products__id, 
+product.name as products__name,  
+(SELECT SUM(stockin_item.quantity) FROM stockin_item _fx_WHERE  (stockin_item.is_deleted = 0) AND ( (  stockin_item.id > 0) AND ( stockin_item.product_id = product.id )))-(SELECT SUM(stockout_item.quantity) FROM stockout_item _fx_WHERE  (stockout_item.is_deleted = 0) AND ( stockout_item.product_id = product.id )) as products__quantitxy, 
+product.is_deleted as products__is_deleted,   
+unit.id as products__unit__id, 
+unit.name as products__unit__name, 
+unit.symbol as products__unit__symbol, 
+unit.description as products__unit__description 
+FROM product  
+INNER JOIN unit ON product.unit_id=unit.id
+
+
+=>run.php
+Shifted if registration is open logic to be the last logic in the file
+=>run.php > handle request
+added a cluase for registration processing only if its configuration is set to is open
+=>tools.php
+added this method to generate code a random integer code: tool_code();
+=>hive.php > hive_run_register_hive
+updated the method to accept a config parameter to accept situations where registration is open
+and also the user object now has a tenant_of property so as to attach a user to a tenant
+=>Added Mailer.php
+=>installed libphone number and sendgrid libraries
+
+
+=>julz
+_julz{
+    _gets:{
+
+    },
+    _posts:{
+
+    }
+}
+
+creating a new tables when new combs are added
+altering tables when columns are edited, removed or added
+
+//speaking to an external server
+_http_:{
+    "url":"",
+    "params":{
+        "p":3
+    }
+}
+
+
+api  end points
+{
+    books:{
+        _w:[["age","gte",34]]
+    },
+    _api:"books/?age=32&condi=greaterthan"
+};
+turn it into a base 64, then look in the 
+api folder if there is a file 
+this will create a file 5473839.php
+if not exists
+//books/?age=32&condi=greaterthan
+function 5473839($p1){
+    $nec = array(
+        "books" => array(
+            "_w" => array(
+                array("age","gte",$p1)
+            )
+        )
+    );
+    //call the bee engine functions here 
+    return bee....;
+};
+//the name of the function is the base 64 of _api
+which has to be unique
+
+
+read Excell data
+{
+    _f_xlsx:{
+        "_from": {
+            "comb_name": {
+                "_file_repayment": path to file
+            }
+        },
+        "_table":""//a future developemnt to render the data also as an html table
+    }
+}
+
+
+batch jobs
+will also demostrate the ability to map data format to each row
+then fill a post template, preprocessing and upload to server
+
+during file uploading and saving the file
+the final file sould be saved in the companies folder
+this folder is the same name as the db name
+
+conditional execution
+{
+    _if:{
+        _not_exists:{
+            repayments:{
+                _w:[["posted_file","e",]]
+            }
+        },
+        _then:{
+
+        },
+        _msg:"File was already uploaded"
+    }
+}
+
+
+
+
+
+
+
+hashing numbers results
+e.g
+var nec = {
+                accounting_transactions: {
+                    accounting_event: {},
+                    journal: {},
+                    _gb:["occurancy_date"],
+                    _desc: ["occurancy_time"],
+                    _w:[["is_closed","e",0]],
+                    _hash:"num"
+                }
+            };
+            app.pages.master_page.pages.accounting.pages.closures.showTableLoader();
+            bee.get(nec, function (hny) {
+                app.pages.master_page.pages.accounting.pages.closures.hideTableLoader();
+                if (hny._errors.length > 0) {
+                    app.showErrors(hny._errors);
+                } else {
+                    console.log(hny);
+                }
+            });
+        
+also it can be inserted inside of a child node so that
+you can avoid loops
+
+_xtu_comb: "path to unique objects to be extracted"
+
+an n xtract for n queries
+_nxtva_accounting_transactions: "amount"
+
+
+index is like a group by but for it it is putting information
+together that belongs to the label
+is applied to a list of objects not to an object
+this operation still extracts unique values, as in the results
+set does not have dublicates
+//nyd to add a version like _indexo_ for indexinf as key:object
+//the current one indexes as key:[object1,object2,...]
+//and _iindex_ and _iindexo_ to allow for duplicates
+{
+    accounting_transactions: {
+        accounting_event: {},
+        journal: {},
+        _gb:["occurancy_date"],
+        _desc: ["occurancy_time"],
+        _w:[["is_closed","e",0]],_hash:"num"
+    },
+    _index_accounting_transactions:"occurancy_date"
+};
+app.pages.master_page.pages.accounting.pages.closures.showTableLoader();
+bee.get(nec, function (hny) {
+    app.pages.master_page.pages.accounting.pages.closures.hideTableLoader();
+    if (hny._errors.length > 0) {
+        app.showErrors(hny._errors);
+    } else {
+        console.log(hny);
+    }
+});
+so the following 
+var nec = {
+    accounting_transactions: {
+        accounting_event: {},
+        journal: {},
+        _desc: ["occurancy_time"],
+        _w:[["is_closed","e",0]],
+        _hash:"num"
+    },
+    _index_accounting_transactions:"occurancy_date"
+};
+//notic that the numbering/hasing occurrs before _index_accounting_transactions
+//this is because indexing is an after math operation
+//it operates from the root
+{
+    "2019-03-25": [
+        {
+            "id": 5,
+            "accounting_event_id": "2",
+            "journal_id": "1",
+            "occurancy_time": 1553472000,
+            "occurancy_date": "2019-03-25",
+            "amount": 700000,
+            "direction": "debit",
+            "fiscal_year_id": "1",
+            "description": "testing",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 2,
+                "name": "Loan Provision",
+                "code": "LLP",
+                "sort_order": 2,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 1
+        }
+    ],
+    "2019-03-22": [
+        {
+            "id": 1,
+            "accounting_event_id": "1",
+            "journal_id": "1",
+            "occurancy_time": 1553212800,
+            "occurancy_date": "2019-03-22",
+            "amount": 45000,
+            "direction": "debit",
+            "fiscal_year_id": "1",
+            "description": "this sb test",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 1,
+                "name": "Disbursment Of Loan Amount",
+                "code": "DOLA",
+                "sort_order": 1,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 2
+        },
+        {
+            "id": 2,
+            "accounting_event_id": "1",
+            "journal_id": "1",
+            "occurancy_time": 1553212800,
+            "occurancy_date": "2019-03-22",
+            "amount": 70000,
+            "direction": "credit",
+            "fiscal_year_id": "1",
+            "description": "sample 3 sbtest",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 1,
+                "name": "Disbursment Of Loan Amount",
+                "code": "DOLA",
+                "sort_order": 1,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 3
+        }
+    ],
+    "2019-03-14": [
+        {
+            "id": 4,
+            "accounting_event_id": "2",
+            "journal_id": "1",
+            "occurancy_time": 1552521600,
+            "occurancy_date": "2019-03-14",
+            "amount": 700000,
+            "direction": "credit",
+            "fiscal_year_id": "1",
+            "description": "desc",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 2,
+                "name": "Loan Provision",
+                "code": "LLP",
+                "sort_order": 2,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 4
+        }
+    ]
+}
+//another example here
+{
+    accounting_transactions: {
+        accounting_event: {},
+        journal: {}, 
+        accounting_entries:{},
+        _desc: ["occurancy_time"],
+        _w:[["is_closed","e",0]],
+        _hash:"num"
+    },
+    _index_accounting_transactions:"accounting_transactions.accounting_entries.account_id"
+};
+we are indexing on the account_id of the entries and it extracts the unique account entries
+then it groups then according to the account id,
+{
+    "1": [
+        {
+            "id": 2,
+            "accounting_transaction_id": "1",
+            "account_id": "1",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 45000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 5,
+            "accounting_transaction_id": "2",
+            "account_id": "1",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 70000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ],
+    "2": [
+        {
+            "id": 3,
+            "accounting_transaction_id": "1",
+            "account_id": "2",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 36000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 4,
+            "accounting_transaction_id": "2",
+            "account_id": "2",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 14000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 6,
+            "accounting_transaction_id": "2",
+            "account_id": "2",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 56000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ],
+    "3": [
+        {
+            "id": 10,
+            "accounting_transaction_id": "5",
+            "account_id": "3",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 8,
+            "accounting_transaction_id": "4",
+            "account_id": "3",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ],
+    "4": [
+        {
+            "id": 11,
+            "accounting_transaction_id": "5",
+            "account_id": "4",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 9,
+            "accounting_transaction_id": "4",
+            "account_id": "4",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ]
+}
+//nyd
+//we should have a mode that indexes on a path but keeps the original path 
+//data intact, as you can see the above example only extracts the 
+//refrenced path
+
+//nyd
+//another possible innovation
+//here especially with root operations is to have a mood
+//such as _retain: true, so that root operations dont alter
+//the original results
+
+
+//now it doesnot make much sence to exract inner objects index them 
+//and call them some thing else, so we introduce ->
+//naming thing
+{
+    accounting_transactions: {
+        accounting_event: {},
+        journal: {}, 
+        accounting_entries:{},
+        _desc: ["occurancy_time"],
+        _w:[["is_closed","e",0]],
+        _hash:"num"
+    },
+    _index_accounting_transactions:"entries_by_account-->accounting_transactions.accounting_entries.account_id"
+};
+so now we get
+{
+    "1": [
+        {
+            "id": 2,
+            "accounting_transaction_id": "1",
+            "account_id": "1",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 45000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 5,
+            "accounting_transaction_id": "2",
+            "account_id": "1",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 70000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ],
+    "2": [
+        {
+            "id": 3,
+            "accounting_transaction_id": "1",
+            "account_id": "2",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 36000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 4,
+            "accounting_transaction_id": "2",
+            "account_id": "2",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 14000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 6,
+            "accounting_transaction_id": "2",
+            "account_id": "2",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 56000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ],
+    "3": [
+        {
+            "id": 10,
+            "accounting_transaction_id": "5",
+            "account_id": "3",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 8,
+            "accounting_transaction_id": "4",
+            "account_id": "3",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "credit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ],
+    "4": [
+        {
+            "id": 11,
+            "accounting_transaction_id": "5",
+            "account_id": "4",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        },
+        {
+            "id": 9,
+            "accounting_transaction_id": "4",
+            "account_id": "4",
+            "accounting_rule_id": "0",
+            "is_accounting_rule": 0,
+            "amount": 700000,
+            "direction": "debit",
+            "is_manuall_entry": 1,
+            "remarks": "",
+            "ledger_id": "1"
+        }
+    ]
+}
+//we may need to keep the original list do we can user
+{
+    accounting_transactions: {
+        accounting_event: {},
+        journal: {}, 
+        accounting_entries:{},
+        _desc: ["occurancy_time"],
+        _w:[["is_closed","e",0]],
+        _hash:"num"
+    },
+    _indexk_accounting_transactions:"entries_by_account-->accounting_transactions.accounting_entries.account_id"
+};
+we get
+{
+    "accounting_transactions": [
+        {
+            "id": 5,
+            "accounting_event_id": "2",
+            "journal_id": "1",
+            "occurancy_time": 1553472000,
+            "occurancy_date": "2019-03-25",
+            "amount": 700000,
+            "direction": "debit",
+            "fiscal_year_id": "1",
+            "description": "testing",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 2,
+                "name": "Loan Provision",
+                "code": "LLP",
+                "sort_order": 2,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 1,
+            "accounting_entries": [
+                {
+                    "id": 10,
+                    "accounting_transaction_id": "5",
+                    "account_id": "3",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 11,
+                    "accounting_transaction_id": "5",
+                    "account_id": "4",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "accounting_event_id": "1",
+            "journal_id": "1",
+            "occurancy_time": 1553212800,
+            "occurancy_date": "2019-03-22",
+            "amount": 45000,
+            "direction": "debit",
+            "fiscal_year_id": "1",
+            "description": "this sb test",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 1,
+                "name": "Disbursment Of Loan Amount",
+                "code": "DOLA",
+                "sort_order": 1,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 2,
+            "accounting_entries": [
+                {
+                    "id": 1,
+                    "accounting_transaction_id": "1",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 9000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 2,
+                    "accounting_transaction_id": "1",
+                    "account_id": "1",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 45000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 3,
+                    "accounting_transaction_id": "1",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 36000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "accounting_event_id": "1",
+            "journal_id": "1",
+            "occurancy_time": 1553212800,
+            "occurancy_date": "2019-03-22",
+            "amount": 70000,
+            "direction": "credit",
+            "fiscal_year_id": "1",
+            "description": "sample 3 sbtest",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 1,
+                "name": "Disbursment Of Loan Amount",
+                "code": "DOLA",
+                "sort_order": 1,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 3,
+            "accounting_entries": [
+                {
+                    "id": 4,
+                    "accounting_transaction_id": "2",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 14000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 5,
+                    "accounting_transaction_id": "2",
+                    "account_id": "1",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 70000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 6,
+                    "accounting_transaction_id": "2",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 56000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "accounting_event_id": "2",
+            "journal_id": "1",
+            "occurancy_time": 1552521600,
+            "occurancy_date": "2019-03-14",
+            "amount": 700000,
+            "direction": "credit",
+            "fiscal_year_id": "1",
+            "description": "desc",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 2,
+                "name": "Loan Provision",
+                "code": "LLP",
+                "sort_order": 2,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 4,
+            "accounting_entries": [
+                {
+                    "id": 8,
+                    "accounting_transaction_id": "4",
+                    "account_id": "3",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 9,
+                    "accounting_transaction_id": "4",
+                    "account_id": "4",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        }
+    ],
+    "entries_by_account": {
+        "1": [
+            {
+                "id": 2,
+                "accounting_transaction_id": "1",
+                "account_id": "1",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 45000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 5,
+                "accounting_transaction_id": "2",
+                "account_id": "1",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 70000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ],
+        "2": [
+            {
+                "id": 3,
+                "accounting_transaction_id": "1",
+                "account_id": "2",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 36000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 4,
+                "accounting_transaction_id": "2",
+                "account_id": "2",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 14000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 6,
+                "accounting_transaction_id": "2",
+                "account_id": "2",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 56000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ],
+        "3": [
+            {
+                "id": 10,
+                "accounting_transaction_id": "5",
+                "account_id": "3",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 8,
+                "accounting_transaction_id": "4",
+                "account_id": "3",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ],
+        "4": [
+            {
+                "id": 11,
+                "accounting_transaction_id": "5",
+                "account_id": "4",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 9,
+                "accounting_transaction_id": "4",
+                "account_id": "4",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ]
+    },
+    "_errors": []
+}
+
+
+///a thing that returns all executed queries in a query to the user
+{
+    _sql:{}
+}
+
+
+//tree operationd
+//things done on heirachi data
+note that the artributes in the list must have account_id as the example below to work
+{ 
+    accounts:{
+        _a: "id account_number account_id default_balance _fx_balance",
+        _fx_balance:{
+            _diff:{
+                //we use suma and sumb because they are the same combs
+                _suma_accounting_entries: {
+                    _a:"amount",
+                    _w:[["direction","e","debit"]]
+                },
+                _sumb_accounting_entries: {
+                    _a:"amount",
+                    _w:[["direction","e","credit"]]
+                }
+            }
+        },
+        accounting_entries:{} //nyd delete this, its just a point to prove
+    }, 
+    _tree_sum_accounts: "balance...real_balance" 
+};
+_tree_sum_accounts
+
+//pulling
+//allows you to feth data from unrelated tables
+//nyd
+//notice for now it does not work with lists of objects, it only pulls objects for now
+bee.console({
+    loan_contract:{ _a: "id topped_up_request_id",
+        _w:[["id","e",8]],
+        _pull_closin_topup:"topup_request.topped_up_request_id", 
+        _pull_opennig_topup:"topup_request.oppening_topp_up_request_id"
+    },_sql:{}
+});
+
+//comments
+_cmts:{}
+will make the response have comments about the returned data
+from the hive definition
+{
+    loan_products:[
+        {
+            fish:{}
+        }
+    ],
+    _cmts:{
+        loan_products:[],
+        fish:[]
+    }
+}
+
+
+
+///error with tree suma
+//when the tree source is not in the right order
+var nec = {
+    // accounts: {
+    //     accounting_entries:{
+    //         accounting_transaction: {
+    //             _a: "id"
+    //         },
+    //         _w:[["_fk_accounting_transaction.is_closed","e",1]]
+    //     },
+    //     _desc:["account_number"]
+    // },
+    accounts: {
+        _a: "id account_id account_number default_balance _fx_balance",
+        _fx_balance: {
+            _diff: {
+                //we use suma and sumb because they are the same combs
+                _suma_accounting_entries: {
+                    _a: "amount",
+                    accounting_transaction: {
+                        _a: "id"
+                    },
+                    _w: [
+                        [
+                            ["direction", "e", "credit"]
+                            , "AND",
+                            ["_fk_accounting_transaction.is_closed", "e", 1]
+                        ]
+                    ]
+                },
+                _sumb_accounting_entries: {
+                    _a: "amount",
+                    accounting_transaction: {
+                        _a: "id"
+                    },
+                    _w: [
+                        [
+                            ["direction", "e", "debit"]
+                            , "AND",
+                            ["_fk_accounting_transaction.is_closed", "e", 1]
+                        ]
+                    ]
+                },
+            }
+        },
+        _desc:["account_number"]
+    },
+    _tree_sum_accounts: "balance...real_balance",
+    _index__tree_sum_accounts: "_tree_sum_accounts.id"
+};

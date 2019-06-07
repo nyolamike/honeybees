@@ -1,0 +1,50 @@
+version: '3'
+services:
+  mysql_srv:
+    container_name: mysql_cnt
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql-2015
+    volumes:
+      - ./db/dev/:/var/lib/mysql/
+    ports:
+      - 8888:3306
+
+  phpmyadmin_srv:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_cnt
+    environment:
+     - PMA_ARBITRARY=1
+     - PMA_HOST = mysql_srv
+     - PMA_PORT = 3306
+    restart: always
+    ports:
+     - 8080:80
+    volumes:
+     - ./phpmyadmin/sessions/
+     - ./phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+     - ./phpmyadmin/theme/:/www/themes/theme/
+    depends_on:
+      - mysql_srv
+
+  bee_srv:
+    container_name: bee_cnt
+    image: bee_img
+    build: 
+      context: ./
+      dockerfile: ./backend/Dockerfile
+    volumes:
+      - ./backend:/var/www/html/
+    ports:
+      - 8989:80
+    depends_on:
+      - mysql_srv
+
+  #you can add your front end application configuration here
+  #run this to bootstrap backend master db: 
+  #http://localhost:8989/?q=eyJfZl9iZWUiOnt9fQ==
+  
+
+  

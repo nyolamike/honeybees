@@ -1,0 +1,367 @@
+{
+    "accounting_transactions": [
+        {
+            "id": 5,
+            "accounting_event_id": "2",
+            "journal_id": "1",
+            "occurancy_time": 1553472000,
+            "occurancy_date": "2019-03-25",
+            "amount": 700000,
+            "direction": "debit",
+            "fiscal_year_id": "1",
+            "description": "testing",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 2,
+                "name": "Loan Provision",
+                "code": "LLP",
+                "sort_order": 2,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 1,
+            "accounting_entries": [
+                {
+                    "id": 10,
+                    "accounting_transaction_id": "5",
+                    "account_id": "3",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 11,
+                    "accounting_transaction_id": "5",
+                    "account_id": "4",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "accounting_event_id": "1",
+            "journal_id": "1",
+            "occurancy_time": 1553212800,
+            "occurancy_date": "2019-03-22",
+            "amount": 45000,
+            "direction": "debit",
+            "fiscal_year_id": "1",
+            "description": "this sb test",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 1,
+                "name": "Disbursment Of Loan Amount",
+                "code": "DOLA",
+                "sort_order": 1,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 2,
+            "accounting_entries": [
+                {
+                    "id": 1,
+                    "accounting_transaction_id": "1",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 9000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 2,
+                    "accounting_transaction_id": "1",
+                    "account_id": "1",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 45000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 3,
+                    "accounting_transaction_id": "1",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 36000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "accounting_event_id": "1",
+            "journal_id": "1",
+            "occurancy_time": 1553212800,
+            "occurancy_date": "2019-03-22",
+            "amount": 70000,
+            "direction": "credit",
+            "fiscal_year_id": "1",
+            "description": "sample 3 sbtest",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 1,
+                "name": "Disbursment Of Loan Amount",
+                "code": "DOLA",
+                "sort_order": 1,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 3,
+            "accounting_entries": [
+                {
+                    "id": 4,
+                    "accounting_transaction_id": "2",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 14000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 5,
+                    "accounting_transaction_id": "2",
+                    "account_id": "1",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 70000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 6,
+                    "accounting_transaction_id": "2",
+                    "account_id": "2",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 56000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "accounting_event_id": "2",
+            "journal_id": "1",
+            "occurancy_time": 1552521600,
+            "occurancy_date": "2019-03-14",
+            "amount": 700000,
+            "direction": "credit",
+            "fiscal_year_id": "1",
+            "description": "desc",
+            "user_id": "1",
+            "is_closed": 0,
+            "is_manuall_entry": 1,
+            "accounting_closure_id": "0",
+            "remarks": "Manual Entry",
+            "accounting_event": {
+                "id": 2,
+                "name": "Loan Provision",
+                "code": "LLP",
+                "sort_order": 2,
+                "system_event_name": "Loan Disbursment"
+            },
+            "journal": {
+                "id": 1,
+                "name": "ugx",
+                "description": "ugx journal"
+            },
+            "num": 4,
+            "accounting_entries": [
+                {
+                    "id": 8,
+                    "accounting_transaction_id": "4",
+                    "account_id": "3",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "credit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                },
+                {
+                    "id": 9,
+                    "accounting_transaction_id": "4",
+                    "account_id": "4",
+                    "accounting_rule_id": "0",
+                    "is_accounting_rule": 0,
+                    "amount": 700000,
+                    "direction": "debit",
+                    "is_manuall_entry": 1,
+                    "remarks": "",
+                    "ledger_id": "1"
+                }
+            ]
+        }
+    ],
+    "entries_by_account": {
+        "1": [
+            {
+                "id": 2,
+                "accounting_transaction_id": "1",
+                "account_id": "1",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 45000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 5,
+                "accounting_transaction_id": "2",
+                "account_id": "1",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 70000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ],
+        "2": [
+            {
+                "id": 3,
+                "accounting_transaction_id": "1",
+                "account_id": "2",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 36000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 4,
+                "accounting_transaction_id": "2",
+                "account_id": "2",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 14000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 6,
+                "accounting_transaction_id": "2",
+                "account_id": "2",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 56000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ],
+        "3": [
+            {
+                "id": 10,
+                "accounting_transaction_id": "5",
+                "account_id": "3",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 8,
+                "accounting_transaction_id": "4",
+                "account_id": "3",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "credit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ],
+        "4": [
+            {
+                "id": 11,
+                "accounting_transaction_id": "5",
+                "account_id": "4",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            },
+            {
+                "id": 9,
+                "accounting_transaction_id": "4",
+                "account_id": "4",
+                "accounting_rule_id": "0",
+                "is_accounting_rule": 0,
+                "amount": 700000,
+                "direction": "debit",
+                "is_manuall_entry": 1,
+                "remarks": "",
+                "ledger_id": "1"
+            }
+        ]
+    },
+    "_errors": []
+}
